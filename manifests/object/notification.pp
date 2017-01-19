@@ -116,8 +116,8 @@ define icinga2::object::notification (
 
   validate_string($host_name)
   if $service_name { validate_string($service_name) }
-  if $users { $_users = any2array($users) } else { $_users = undef }
-  if $user_groups { $_user_groups = any2array($user_groups) } else { $_user_groups = undef }
+  if $users { $_users = $users } else { $_users = undef }
+  if $user_groups { $_user_groups = $user_groups } else { $_user_groups = undef }
   if $times { validate_hash($times) }
   if $command { validate_string($command) }
   if $interval { validate_integer($interval) }
